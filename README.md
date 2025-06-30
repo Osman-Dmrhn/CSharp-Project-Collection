@@ -9,8 +9,7 @@ Bu depo, C# dili ile geliştirdiğim web tabanlı uygulama ve otomasyon projeler
 ### 🚗 OtoGaleriOtomasyonu
 Araç alım-satım işlemleri için hazırlanmış bir otomasyon uygulamasıdır. Araç kayıtları, satış bilgileri ve müşteri takibi gibi işlemleri içerir.
 
-- **Teknolojiler:** C#, ASP.NET MVC
-- **Not:** Entity Framework kullanılmamış olabilir.
+- **Teknolojiler:** C#, ASP.NET
 
 📁 [Proje Klasörü](./OtoGaleriOtomasyonu)
 
