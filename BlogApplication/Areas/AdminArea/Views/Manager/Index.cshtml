@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Admin Yönetimi";
+}
+@model IEnumerable<Admin>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+
+    <!-- AdminLTE CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/overlayScrollbars/1.13.1/css/OverlayScrollbars.min.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AdminLTE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayScrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-link">
+                <span class="brand-text font-weight-light">Admin Panel</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Admin" asp-area="AdminArea" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Yeni Menüler (Butonlar) Buraya Taşındı -->
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Category" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>Kategori İşlemleri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="AdminBlog" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-blog"></i>
+                                <p>Blog İşlemleri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Manager" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-user-plus"></i>
+                                <p>Yeni Yönetici Ekle</p>
+                            </a>
+                        </li>
+                        <!-- Çıkış Butonu -->
+                        <li class="nav-item">
+                            <a asp-controller="Admin" asp-action="LogOut" class="nav-link btn-logout">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Çıkış Yap</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">Admin Yönetimi</h1>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <!-- Ana Sayfa Butonu -->
+                    <a asp-action="Index" asp-controller="Admin" class="btn btn-secondary mb-3">Ana Sayfa</a>
+                    <a asp-action="AddMan" class="btn btn-primary mb-3">Yeni Yönetici Ekle</a>
+
+                    <table id="adminTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Kullanıcı Adı</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var admin in Model)
+                            {
+                                <tr>
+                                    <td>@admin.KullaniciAdi</td>
+                                    <td>@admin.Email</td>
+                                    <td>@admin.Rol</td>
+                                    <td>
+                                        <a asp-action="EditMan" asp-route-id="@admin.Id" class="btn btn-warning btn-sm">Düzenle</a>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteAdmin('@admin.Id')">Sil</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // DataTable'ı initialize et
+            $('#adminTable').DataTable();
+
+            // Silme işlemi
+            window.deleteAdmin = function (id) {
+                Swal.fire({
+                    title: 'Emin misiniz?',
+                    text: "Bu işlem geri alınamaz!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Evet, Sil!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = `AdminArea/Manager/Delete/${id}`;
+                    }
+                });
+            };
+
+            // TempData'dan SuccessMessage al
+            var successMessage = '@(TempData["SuccessMessage"] != null ? TempData["SuccessMessage"].ToString() : "")';
+
+            // Eğer successMessage varsa, SweetAlert ile göster
+            if (successMessage) {
+                Swal.fire({
+                    title: 'Başarılı!',
+                    text: successMessage,
+                    icon: 'success',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

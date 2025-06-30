@@ -1,0 +1,40 @@
+﻿@model List<Blog>
+@{ }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit And Byte</title>
+    <link rel="stylesheet" href="/css/view.css">
+</head>
+<body>
+    <div class="post container">
+        @foreach (var post in Model)
+        {
+            <div class="post">
+                <div class="header">
+                    <img src="@post.ResimPath" alt="@post.Baslik">
+                </div>
+                <div class="content">
+                    <h1>@post.Baslik</h1>
+                    <div class="des">@post.Aciklama</div>
+                    <div class="confirm">
+                        <a href="@Url.Action("editBlog", "Blog", new { id = post.Id })"><button class="Change">Düzenle</button></a>
+                        <a href="@Url.Action("removeBlog", "Blog", new { id = post.Id })"><button class="Delete">Sil</button></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="home-btn-container" style="text-align: center; margin-top: 20px;">
+        <a href="/Home/Index">
+            <button class="home-btn" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Ana Sayfa
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>

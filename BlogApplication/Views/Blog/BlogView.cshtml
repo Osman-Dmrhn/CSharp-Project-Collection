@@ -1,0 +1,97 @@
+﻿@model BlogAddModel
+@{
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit And Byte</title>
+    <link rel="stylesheet" href="/css/writes.css">
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="form-container">
+        <h2>New Blog</h2>
+        <form asp-action="addBlog" asp-controller="Blog" enctype="multipart/form-data">
+            <label for="Baslik">Title</label>
+            <input for="Baslik" name="Baslik" type="text" id="title" placeholder="Enter title" required>
+            <span asp-validation-for="Baslik"></span>
+
+            <label for="Icerik">Description:</label>
+            <textarea id="Icerik" name="Icerik" placeholder="Enter description" required></textarea>
+            <span asp-validation-for="Icerik"></span>
+
+            <label for="KategoriAdi">Kategori:</label>
+            <select id="KategoriAdi" name="KategoriAdi" required>
+                <option value="" disabled selected>Bir kategori seçin</option>
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.Text">@category.Text</option>
+                }
+            </select>
+            <span asp-validation-for="KategoriAdi"></span>
+
+            <label for="photo">Upload Image:</label>
+            <input type="file" name="photo" id="image" accept="image/*" required>
+
+            <button type="submit">Update Blog</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <div class="col-md-4">
+        <a asp-action="Index" asp-controller="Home" id="return-to-top" class="float-md-end">
+            <i class="icon-arrow-up"></i>
+            AnaSayfa
+        </a>
+    </div>
+
+    <script>
+        // Form Submit İşlemleri
+        document.getElementById('productForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const image = document.getElementById('image').files[0];
+
+            document.getElementById('productTitle').textContent = title;
+            document.getElementById('productDescription').textContent = description;
+
+            if (image) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('productImage').src = e.target.result;
+                };
+                reader.readAsDataURL(image);
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const style = document.createElement('style');
+            style.textContent = `
+                        ::-webkit-scrollbar { width: 12px; }
+                        ::-webkit-scrollbar-track { background: #f1f1f1; }
+                        ::-webkit-scrollbar-thumb { background: rgb(250, 160, 75); border-radius: 6px; }
+                        ::-webkit-scrollbar-thumb:hover { background: rgba(250, 160, 75, 0.8); }
+                    `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>

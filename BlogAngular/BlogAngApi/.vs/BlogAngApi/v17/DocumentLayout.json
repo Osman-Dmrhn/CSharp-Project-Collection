@@ -1,0 +1,296 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\BlogAngular\\BlogAngApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\model\\blogaddmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:model\\blogaddmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\model\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:model\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\model\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:model\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:model\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\model\\blogupdmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:model\\blogupdmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\adminblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\adminblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\services\\iadminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:services\\iadminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\services\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:services\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|e:\\blogangular\\blogangapi\\services\\iblogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3223E3DB-1907-476F-AFC8-59DEFD368060}|BlogAngApi.csproj|solutionrelative:services\\iblogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\ManagerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ManagerController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\ManagerController.cs",
+              "RelativeToolTip": "Controllers\\ManagerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T18:46:43.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BlogAddModel.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Model\\BlogAddModel.cs",
+              "RelativeDocumentMoniker": "Model\\BlogAddModel.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Model\\BlogAddModel.cs",
+              "RelativeToolTip": "Model\\BlogAddModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T18:46:17.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T19:49:33.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Blog.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Model\\Blog.cs",
+              "RelativeDocumentMoniker": "Model\\Blog.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Model\\Blog.cs",
+              "RelativeToolTip": "Model\\Blog.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAUwBEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T16:06:34.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Model\\Admin.cs",
+              "RelativeDocumentMoniker": "Model\\Admin.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Model\\Admin.cs",
+              "RelativeToolTip": "Model\\Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T18:38:52.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Model\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "Model\\CategoryDto.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Model\\CategoryDto.cs",
+              "RelativeToolTip": "Model\\CategoryDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T16:24:14.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminBlogController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\AdminBlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminBlogController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\AdminBlogController.cs",
+              "RelativeToolTip": "Controllers\\AdminBlogController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwAkAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T19:57:59.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T20:11:04.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "blogUpdModel.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Model\\blogUpdModel.cs",
+              "RelativeDocumentMoniker": "Model\\blogUpdModel.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Model\\blogUpdModel.cs",
+              "RelativeToolTip": "Model\\blogUpdModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T16:06:14.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAdminServices.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Services\\IAdminServices.cs",
+              "RelativeDocumentMoniker": "Services\\IAdminServices.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Services\\IAdminServices.cs",
+              "RelativeToolTip": "Services\\IAdminServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T18:43:19.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BlogController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "Controllers\\BlogController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:57:59.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Services\\BlogService.cs",
+              "RelativeDocumentMoniker": "Services\\BlogService.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Services\\BlogService.cs",
+              "RelativeToolTip": "Services\\BlogService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAADwvzcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T15:40:57.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAHIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T20:46:16.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Controllers\\CommentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T19:41:50.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAkwHcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T17:56:10.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IBlogService.cs",
+              "DocumentMoniker": "E:\\BlogAngular\\BlogAngApi\\Services\\IBlogService.cs",
+              "RelativeDocumentMoniker": "Services\\IBlogService.cs",
+              "ToolTip": "E:\\BlogAngular\\BlogAngApi\\Services\\IBlogService.cs",
+              "RelativeToolTip": "Services\\IBlogService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T16:11:46.108Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

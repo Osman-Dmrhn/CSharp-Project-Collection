@@ -1,0 +1,32 @@
+﻿@model List<FactoryEntitlementProgram.Models.EmployeeWorkSummaryViewModel>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Çalışma Günleri Listesi";
+}
+
+<h2>Çalışma Günleri Listesi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Personel</th>
+            <th>Çalıştığı Gün Sayısı</th>
+            <th>Fazla Mesai (Gün)</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.WorkDaysCount</td>
+                <td>@item.OvertimeHours</td>
+                <td>
+                    <a asp-action="WorkdayDetails" asp-route-employeeId="@item.EmployeeId" class="btn btn-primary btn-sm">Detay</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

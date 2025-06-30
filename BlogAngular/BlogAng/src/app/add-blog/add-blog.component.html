@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Add Blog</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Baslik">Title</label>
+        <input type="text" class="form-control" id="Baslik" [(ngModel)]="blogData.Baslik" name="Baslik" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="Icerik">Content</label>
+        <textarea class="form-control" id="Icerik" [(ngModel)]="blogData.Icerik" name="Icerik" required></textarea>
+      </div>
+  
+      <select class="form-control" id="KategoriAdi" [(ngModel)]="blogData.KategoriAdi" name="KategoriAdi" required>
+        <option value="" disabled selected>Loading...</option>
+        <option *ngFor="let category of categories" [value]="category.kategoriAdi">
+          {{ category.kategoriAdi }}
+        </option>
+      </select>
+  
+      <div class="form-group">
+        <label for="photo">Upload Image</label>
+        <input type="file" class="form-control" id="photo" (change)="onFileChange($event)">
+      </div>
+  
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+      <button type="submit" class="btn btn-primary">Add Blog</button>
+    </form>
+  </div>
+  

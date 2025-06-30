@@ -1,0 +1,93 @@
+﻿@model RegisterLoginViewModel
+@{
+
+}
+@{
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/loginstyle.css">
+        <title>Login</title>
+    </head>
+
+    <body>
+
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form asp-action="Register" asp-controller="Login" method="post">
+                    <h1>Welcome</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registeration</span>
+                    <input asp-for="user.Username" type="text" placeholder="Username" required>
+                    <span asp-validation-for="user.Username" class="text-danger"></span>
+
+                    <input asp-for="user.Email" type="email" placeholder="Email" required>
+                    <span asp-validation-for="user.Email" class="text-danger"></span>
+
+                    <input asp-for="user.PasswordHash" type="password" placeholder="Password" required>
+                    <span asp-validation-for="user.PasswordHash" class="text-danger"></span>
+                    
+                    <button>Sign in</button>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form asp-action="LoginView" asp-controller="Login" method="post">
+                    <h1>Login</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email password</span>
+                    <input asp-for="login.Email" type="email" placeholder="Email">
+                    <span asp-validation-for="login.Email" class="text-danger"></span>
+                    <input asp-for="login.PasswordHash" type="password" placeholder="Password">
+                    <span asp-validation-for="login.PasswordHash" class="text-danger"></span>
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            @TempData["ErrorMessage"]
+                        </div>
+                    }
+                    <a href="#">Forget Your Password?</a>
+                    <button>Login</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of site features</p>
+                        <button class="hidden" id="login">Login</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Register with your personal details to use all of site features</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const container = document.getElementById('container');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
+
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
+            });
+        </script>
+    </body>
+}

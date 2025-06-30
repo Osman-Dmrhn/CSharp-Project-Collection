@@ -1,0 +1,171 @@
+/* Genel Stil */
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Arka plan degrade */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navbar */
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Şeffaf siyah */
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #007bff;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button.btn-success {
+  background-color: #28a745;
+}
+
+button.btn-success:hover {
+  background-color: #218838;
+}
+
+button.btn-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+button.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+button.btn-outline-secondary {
+  background-color: transparent;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+button.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Kategori Listesi */
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.categories-list button {
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.categories-list button:hover {
+  background-color: #0056b3;
+}
+
+/* Kartlar */
+.card {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Görsel */
+.card img {
+  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+p strong {
+  color: #495057;
+}
+
+/* Küçük Ekran Desteği */
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .categories-list {
+    justify-content: center;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card img {
+    border-radius: 10px 10px 0 0;
+  }
+}

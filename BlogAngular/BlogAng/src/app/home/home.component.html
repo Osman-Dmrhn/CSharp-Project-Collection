@@ -1,0 +1,61 @@
+<div class="navbar custom-navbar">
+  <div class="nav-left">
+    <button class="btn btn-success" [routerLink]="['/addblog']" routerLinkActive="router-link-active">Blog Yaz</button>
+    <button class="btn btn-warning" [routerLink]="['/usersettings']" routerLinkActive="router-link-active">Hesap Ayarları</button>
+    <button class="btn btn-warning" [routerLink]="['/userBlog']" routerLinkActive="router-link-active">Bloglarım</button>
+    
+  </div>
+  <div class="nav-right">
+    <button *ngIf="!isAuthenticated" class="btn btn-primary" [routerLink]="['/login']" routerLinkActive="router-link-active">Giriş Yap</button>
+    <button *ngIf="isAuthenticated" class="btn btn-primary" (click)="onLogout()">Çıkış Yap</button>
+  </div>
+</div>
+
+<div  class="container mt-4">
+  <h1>Blog Listesi</h1>
+  <!-- Kategoriler -->
+  <div class="categories-list">
+    <button
+      class="btn"
+      [ngClass]="{'btn-primary': selectedCategory === category, 'btn-outline-primary': selectedCategory !== category}"
+      *ngFor="let category of categories"
+      (click)="filterByCategory(category)"
+    >
+      {{ category }}
+    </button>
+    <button class="btn btn-outline-secondary" (click)="clearFilter()">Tümünü Göster</button>
+  </div>
+
+  <!-- Bloglar -->
+  <div UserNameDirective *ngIf="filteredBlogs.length > 0; else noBlogs" class="container mt-4">
+    <div *ngFor="let blog of filteredBlogs" class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            *ngIf="imageUrls[blog.id]; else noImage"
+            [src]="imageUrls[blog.id]"
+            class="img-fluid rounded-start"
+            alt="Blog Fotoğrafı"
+          />
+          <ng-template #noImage>
+            <p>Fotoğraf mevcut değil.</p>
+          </ng-template>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <button class="btn btn-link text-decoration-none p-0" (click)="navigateToBlogDetail(blog.id)">
+              {{ blog.baslik }}
+            </button>
+            <p class="card-text">{{ blog.aciklama }}</p>
+            <p class="card-text"><small class="text-muted">Yazar: {{ blog.yazar?.username }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eğer blog yoksa gösterilecek içerik -->
+  <ng-template #noBlogs>
+    <p>Henüz blog bulunmamaktadır.</p>
+  </ng-template>
+</div>

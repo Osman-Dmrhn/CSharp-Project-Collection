@@ -1,0 +1,110 @@
+<div class="container mt-4">
+    <h1>Yönetici Ayarları</h1>
+  
+    <!-- Yöneticiler Listesi -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Kullanıcı Adı</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let manager of managers">
+          <td>{{ manager.kullaniciAdi }}</td>
+          <td>{{ manager.email }}</td>
+          <td>{{ manager.rol }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="editManager(manager)">Düzenle</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteManager(manager.id)">Sil</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Yönetici Ekle -->
+    <div class="mt-4">
+      <h3>Yeni Yönetici Ekle</h3>
+      <form (ngSubmit)="addManager()">
+        <div class="mb-3">
+          <label for="kullaniciAdi" class="form-label">Kullanıcı Adı</label>
+          <input
+            type="text"
+            id="kullaniciAdi"
+            [(ngModel)]="newManager.kullaniciAdi"
+            name="kullaniciAdi"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="newManager.email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sifre" class="form-label">Şifre</label>
+          <input
+            type="password"
+            id="sifre"
+            [(ngModel)]="newManager.sifre"
+            name="sifre"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-success">Ekle</button>
+      </form>
+    </div>
+  
+    <!-- Yönetici Güncelle -->
+    <div *ngIf="selectedManager" class="mt-4">
+      <h3>Yönetici Güncelle</h3>
+      <form (ngSubmit)="saveManager()">
+        <div class="mb-3">
+          <label for="editKullaniciAdi" class="form-label">Kullanıcı Adı</label>
+          <input
+            type="text"
+            id="editKullaniciAdi"
+            [(ngModel)]="selectedManager.kullaniciAdi"
+            name="editKullaniciAdi"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="editEmail" class="form-label">Email</label>
+          <input
+            type="email"
+            id="editEmail"
+            [(ngModel)]="selectedManager.email"
+            name="editEmail"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="editSifre" class="form-label">Şifre</label>
+          <input
+            type="password"
+            id="editSifre"
+            [(ngModel)]="selectedManager.sifre"
+            name="editSifre"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <button type="button" class="btn btn-secondary" (click)="selectedManager = null">Vazgeç</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,54 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  textarea.form-control {
+    min-height: 200px; /* İçerik kutusunun daha büyük olmasını sağlarız */
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  textarea.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  button[type="button"] {
+    width: auto; /* Geri dön butonu için genişliği sınırlıyoruz */
+  }
+  
+  .alert {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .is-invalid {
+    border: 1px solid red;
+  }
+  
+  .mt-3 {
+    margin-top: 20px;
+  }
+  
+  .ml-2 {
+    margin-left: 10px;
+  }
+  

@@ -1,0 +1,47 @@
+<div *ngIf="isLoading" class="loading">
+  Yükleniyor...
+</div>
+
+<div *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!isLoading">
+  <button class="home-button" [routerLink]="['/']" routerLinkActive="router-link-active" >Anasayfa</button>
+
+  <div *ngFor="let blog of blogs" class="blog-card">
+    <h2>{{ blog.baslik }}</h2>
+    <p>{{ blog.aciklama }}</p>
+    <img *ngIf="imageUrls[blog.id]; else noImage" 
+         [src]="imageUrls[blog.id]" 
+         class="blog-image" 
+         alt="Blog Fotoğrafı" />
+    <ng-template #noImage>
+      <p>Fotoğraf mevcut değil.</p>
+    </ng-template>
+    <p><strong>Yazar:</strong> {{ blog.yazar.username }}</p>
+
+    <div *ngIf="blog.yorumlar.length > 0">
+      <h4>Yorumlar:</h4>
+      <ul>
+        <li *ngFor="let yorum of blog.yorumlar">
+          {{ yorum.content }} ({{ yorum.createdAt | date: 'short' }})
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="blog.kategoriler.length > 0">
+      <h4>Kategoriler:</h4>
+      <ul>
+        <li *ngFor="let kategori of blog.kategoriler">
+          {{ kategori.kategoriAdi }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="action-buttons">
+      <button class="edit-button" [routerLink]="['/blogedit', blog.id]">Düzenle</button>
+      <button class="delete-button"(click)="deleteBlog(blog.id)">Sil</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+/* Ana Konteyner */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Yükleniyor mesajı */
+.loading {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Hata mesajı */
+.error {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Blog Kartı */
+.blog-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.blog-card p {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.blog-card .blog-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.blog-card .noImage p {
+  color: #dc3545;
+  font-size: 1rem;
+}
+
+/* Yazar */
+.blog-card .yazar {
+  font-weight: bold;
+  color: #495057;
+  margin-top: 10px;
+}
+
+/* Yorumlar ve Kategoriler */
+.blog-card h4 {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.blog-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.blog-card ul li {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.blog-card ul li span {
+  font-weight: bold;
+}
+
+/* İşlem Butonları */
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #138496;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Anasayfa Butonu */
+.home-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute; /* Butonu sayfa üst kısmına yerleştirmek için */
+  top: 20px; /* Üstten 20px mesafe */
+  right: 20px; /* Sağdan 20px mesafe */
+  z-index: 1000; /* Diğer öğelerin önünde görünsün diye */
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .home-button {
+    position: fixed; /* Mobilde sabit konumda tutar */
+    top: 10px; /* Üstten 10px mesafe */
+    left: 50%; /* Ortalamak için */
+    transform: translateX(-50%); /* Gerçekten ortalamak için */
+    width: 80%; /* Butonun genişliğini %80 yaparak daha rahat tıklanabilir hale getir */
+  }
+  .blog-card {
+    padding: 15px;
+  }
+
+  .home-button {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}

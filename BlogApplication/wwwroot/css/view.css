@@ -1,0 +1,113 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Sayfanýn tamamý için %100 yükseklik */
+    margin: 0;
+    overflow-x: hidden; /* Yalnýzca yatay kaydýrmayý engeller */
+    background: linear-gradient(to top right, #ffb84d, #f7a22f, #ffb84d);
+}
+
+body {
+    overflow-y: auto; /* Dikey kaydýrma yapýlabilir */
+    color: #333;
+    font-size: 16px;
+}
+
+.post.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+    .post:hover {
+        transform: translateY(-10px);
+    }
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+    .header img {
+        width: 100%; /* Resmi kapsayýcýnýn geniþliðine göre ayarlar */
+        height: 250px; /* Yüksekliði sabitler */
+        object-fit: cover; /* Resmin en boy oranýný koruyarak kutuyu doldurur */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+.content {
+    padding: 15px;
+    text-align: center;
+}
+
+    .content h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .content .des {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+.confirm {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+    .confirm button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.Change {
+    background-color: #f7a22f;
+    color: white;
+}
+
+.Delete {
+    background-color: #ff4747;
+    color: white;
+}
+
+.home-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.home-btn {
+    padding: 12px 25px;
+    background-color: #ff9f00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+    .home-btn:hover {
+        background-color: #e68a00;
+    }

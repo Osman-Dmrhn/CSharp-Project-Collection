@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <button (click)="navigateBack()" class="btn btn-secondary mb-3">Geri Git</button>
+
+  <h1>{{ blog?.baslik }}</h1>
+
+  <div *ngIf="imageUrl; else noImage">
+    <img [src]="imageUrl" alt="Blog Fotoğrafı" class="img-fluid mb-3" />
+  </div>
+  <ng-template #noImage>
+    <p>Fotoğraf mevcut değil.</p>
+  </ng-template>
+
+  <p><strong>Açıklama:</strong> {{ blog?.aciklama }}</p>
+  <p><strong>İçerik:</strong> {{ blog?.icerik }}</p>
+
+  <h3>Kategoriler:</h3>
+  <ul>
+    <li *ngFor="let category of blog?.kategoriler">{{ category.kategoriAdi }}</li>
+  </ul>
+
+  <div *ngIf="blog?.yazar">
+    <p><strong>Yazar:</strong> {{ blog.yazar?.username }}</p>
+  </div>
+
+  <!-- Yorum Ekleme -->
+  <div class="mt-4">
+    <h3>Yorum Yap</h3>
+    <textarea
+      [(ngModel)]="newComment"
+      class="form-control mb-3"
+      rows="3"
+      placeholder="Yorumunuzu yazın..."
+    ></textarea>
+    <button (click)="addComment()" class="btn btn-primary">Gönder</button>
+  </div>
+
+  <!-- Yorumlar -->
+  <div class="mt-4">
+    <h3>Yorumlar</h3>
+    <div *ngIf="comments.length > 0; else noComments">
+      <div *ngFor="let comment of comments" class="border p-3 mb-2">
+        <p><strong>{{ comment.user.username }}</strong> dedi ki:</p>
+        <p>{{ comment.content }}</p>
+        <small class="text-muted">{{ comment.createdAt | date: 'short' }}</small>
+      </div>
+    </div>
+    <ng-template #noComments>
+      <p>Henüz yorum yapılmamış.</p>
+    </ng-template>
+  </div>
+</div>

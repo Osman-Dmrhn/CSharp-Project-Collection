@@ -1,0 +1,14 @@
+<div class="admin-home">
+    <div class="header">
+        <h1>Admin Paneline Hoşgeldiniz</h1>
+        <button (click)="logout()" class="logout-button">Çıkış Yap</button>
+    </div>
+    <div class="content">
+        <h2>Admin Seçenekleri</h2>
+        <div class="button-container">
+            <a [routerLink]="['/addSettings']" class="btn">Personel Yönet</a>
+            <a [routerLink]="['/admin-blog']" routerLinkActive="router-link-active" class="btn">Blogları Görüntüle</a>
+            <a [routerLink]="['/addcategory']" routerLinkActive="router-link-active"  class="btn">Kategorileri Yönet</a>
+        </div>
+    </div>
+</div>

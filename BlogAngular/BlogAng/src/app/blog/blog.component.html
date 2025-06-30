@@ -1,0 +1,31 @@
+<div class="blog-container">
+    <h2>Add New Blog</h2>
+  
+    <form (ngSubmit)="addBlog()">
+      <div>
+        <label for="Baslik">Title:</label>
+        <input type="text" id="Baslik" [(ngModel)]="blogAddModel.Baslik" name="Baslik" required />
+      </div>
+  
+      <div>
+        <label for="Icerik">Content:</label>
+        <textarea id="Icerik" [(ngModel)]="blogAddModel.Icerik" name="Icerik" required></textarea>
+      </div>
+  
+      <div>
+        <label for="KategoriAdi">Category:</label>
+        <select [(ngModel)]="selectedCategory" name="KategoriAdi" required>
+          <option *ngFor="let category of categories" [value]="category.KategoriAdi">{{ category.KategoriAdi }}</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="photo">Select Image:</label>
+        <input type="file" id="photo" (change)="onPhotoSelect($event)" />
+      </div>
+  
+      <button type="submit">Add Blog</button>
+    </form>
+  
+  </div>
+  

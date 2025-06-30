@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "Kategori Yönetimi";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title</title>
+
+    <!-- AdminLTE CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/overlayScrollbars/1.13.1/css/OverlayScrollbars.min.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AdminLTE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayScrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-link">
+                <span class="brand-text font-weight-light">Admin Panel</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Admin" asp-area="AdminArea" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Yeni Menüler (Butonlar) Buraya Taşındı -->
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Category" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>Kategori İşlemleri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="AdminBlog" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-blog"></i>
+                                <p>Blog İşlemleri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Manager" asp-area="AdminArea" class="nav-link">
+                                <i class="nav-icon fas fa-user-plus"></i>
+                                <p>Yeni Yönetici Ekle</p>
+                            </a>
+                        </li>
+                        <!-- Çıkış Butonu -->
+                        <li class="nav-item">
+                            <a asp-controller="Admin" asp-action="LogOut" class="nav-link btn-logout">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Çıkış Yap</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">Kategori Yönetimi</h1>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <!-- Kategori Ekleme Formu -->
+                    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#kategoriEkleModal">Kategori Ekle</button>
+
+                    <table id="kategoriTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Kategori Adı</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var kategori in Model)
+                            {
+                                <tr>
+                                    <td>@kategori.Id</td>
+                                    <td>@kategori.KategoriAdi</td>
+                                    <td>
+                                        <form action="@Url.Action("EditCategory", "Category")" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@kategori.Id" />
+                                            <input type="text" name="kategoriAdi" value="@kategori.KategoriAdi" />
+                                            <button type="submit" class="btn btn-warning btn-sm">Düzenle</button>
+                                        </form>
+                                        <form action="@Url.Action("DeleteCategory", "Category")" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@kategori.Id" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori Ekle Modal -->
+        <div class="modal" id="kategoriEkleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Kategori Ekle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="@Url.Action("AddCategory", "Category")" method="post">
+                            <div class="form-group">
+                                <label for="kategoriAdi">Kategori Adı</label>
+                                <input type="text" class="form-control" id="kategoriAdi" name="kategoriAdi" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ekle</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#kategoriTable').DataTable();
+
+
+            var successMessage = '@(TempData["SuccessMessage"] != null ? TempData["SuccessMessage"].ToString() : "")';
+            var errorMessage = '@(TempData["ErrorMessage"] != null ? TempData["ErrorMessage"].ToString() : "")';
+
+            if (successMessage) {
+                Swal.fire({
+                    title: 'Başarılı!',
+                    text: successMessage,
+                    icon: 'success',
+                    confirmButtonText: 'Tamam'
+                });
+            } else if (errorMessage) {
+                Swal.fire({
+                    title: 'Hata!',
+                    text: errorMessage,
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿@model FactoryEntitlementProgram.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Hoş geldin, @Model.FullName!</h2>
+    <div>
+        <a  asp-action="Profile" asp-controller="Account" class="btn btn-outline-primary me-2">⚙️ Profil Ayarları</a>
+        <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">
+            <button type="submit" class="btn btn-outline-danger">🚪 Çıkış Yap</button>
+        </form>
+    </div>
+</div>
+
+<h4>Personel Kodu: @Model.EmployeeCode</h4>
+
+<hr />
+
+<h5>Çalışma Saati ve Ücret Bilgileri</h5>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Bilgi</th>
+            <th>Değer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Toplam Normal Saat</td>
+            <td>@Model.TotalNormalHours saat</td>
+        </tr>
+        <tr>
+            <td>Toplam Mesai Saat</td>
+            <td>@Model.TotalOvertimeHours saat</td>
+        </tr>
+        <tr>
+            <td>Normal Saat Ücreti</td>
+            <td>@Model.NormalHoursPay ₺</td>
+        </tr>
+        <tr>
+            <td>Mesai Saat Ücreti</td>
+            <td>@Model.OvertimeHoursPay ₺</td>
+        </tr>
+        <tr>
+            <td>İzinsiz Devamsızlık Sayısı</td>
+            <td>@Model.UnexcusedAbsenceCount</td>
+        </tr>
+        <tr>
+            <td>Ceza Saatleri</td>
+            <td>@Model.AbsencePenaltyHours saat</td>
+        </tr>
+        <tr>
+            <td>Ceza Tutarı</td>
+            <td>@Model.AbsencePenaltyAmount ₺</td>
+        </tr>
+        <tr class="table-success">
+            <td><strong>Net Ödeme</strong></td>
+            <td><strong>@Model.NetPayment ₺</strong></td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h4>📅 Katılım Takvimi</h4>
+<div id="calendar"></div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'tr',
+                height: 600,
+                events: [
+                    // İşe geldiği günler yeşil
+        @foreach (var day in Model.AttendedDays)
+        {
+            <text>
+                            {
+                                title: 'Geldi',
+                                start: '@day.ToString("yyyy-MM-dd")',
+                                color: 'green'
+                            },
+            </text>
+        }
+
+                    // Mazeretli günler mavi
+        @foreach (var day in Model.ExcusedDays)
+        {
+            <text>
+                            {
+                                title: 'Mazeretli',
+                                start: '@day.ToString("yyyy-MM-dd")',
+                            color: 'yellow'
+                            },
+            </text>
+        }
+
+                    // Gelinmeyen (izinsiz) günler kırmızı
+        @foreach (var day in Model.UnexcusedDays)
+        {
+            <text>
+                            {
+                                title: 'Gelmedi',
+                                start: '@day.ToString("yyyy-MM-dd")',
+                                color: 'red'
+                            },
+            </text>
+        }
+        @foreach (var day in Model.HolidayDays)
+        {
+                    <text>
+                    {
+                        title:'Tatil',
+                        start:'@day.ToString("yyyy-MM-dd")',
+                        color:'blue'
+                    },
+                    </text>
+        }
+        ]
+        });
+
+            calendar.render();
+        });
+    </script>
+}

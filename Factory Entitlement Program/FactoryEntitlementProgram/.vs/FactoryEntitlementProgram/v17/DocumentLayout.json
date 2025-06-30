@@ -1,0 +1,227 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\services\\monthlyearningsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:services\\monthlyearningsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\services\\workdayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:services\\workdayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\services\\holidayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:services\\holidayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\views\\admin\\calculateearnings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:views\\admin\\calculateearnings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|e:\\factory entitlement program\\factoryentitlementprogram\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86AA2406-C106-4E0C-85A4-3BBDDDE49C7E}|FactoryEntitlementProgram.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:46:00.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:45:54.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T13:45:32.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAcwDYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:43:13.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WorkDayService.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\WorkDayService.cs",
+              "RelativeDocumentMoniker": "Services\\WorkDayService.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\WorkDayService.cs",
+              "RelativeToolTip": "Services\\WorkDayService.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAIwFAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:14:32.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HolidayService.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\HolidayService.cs",
+              "RelativeDocumentMoniker": "Services\\HolidayService.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\HolidayService.cs",
+              "RelativeToolTip": "Services\\HolidayService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:09:51.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T12:48:54.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CalculateEarnings.cshtml",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Admin\\CalculateEarnings.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\CalculateEarnings.cshtml",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Admin\\CalculateEarnings.cshtml",
+              "RelativeToolTip": "Views\\Admin\\CalculateEarnings.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T12:48:40.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MonthlyEarningsService.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\MonthlyEarningsService.cs",
+              "RelativeDocumentMoniker": "Services\\MonthlyEarningsService.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\MonthlyEarningsService.cs",
+              "RelativeToolTip": "Services\\MonthlyEarningsService.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAuwDoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:45:11.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "Services\\EmployeeService.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "Services\\EmployeeService.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:43:52.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\AppUser.cs",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Models\\AppUser.cs",
+              "RelativeToolTip": "Models\\AppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:42:18.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Factory Entitlement Program\\FactoryEntitlementProgram\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-22T14:32:34.66Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

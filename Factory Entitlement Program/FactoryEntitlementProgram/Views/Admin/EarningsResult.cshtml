@@ -1,0 +1,37 @@
+﻿@using System.Globalization
+@model List<FactoryEntitlementProgram.Models.MonthlyEarnings>
+@{
+    ViewData["Title"] = "Aylık Kazançlar";
+    var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((int)ViewBag.SelectedMonth);
+    var year = (int)ViewBag.SelectedYear;
+}
+
+<h2>@monthName @year - Personel Kazançları</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Departman</th>
+            <th>Normal Saat</th>
+            <th>Mesai Saat</th>
+            <th>Toplam Ücret</th>
+            <th>Ceza</th>
+            <th>Net Ücret</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var earning in Model)
+        {
+            <tr>
+                <td>@earning.Employee.AppUser.FullName</td>
+                <td>@earning.Employee.Department</td>
+                <td>@earning.TotalNormalHours</td>
+                <td>@earning.TotalOvertimeHours</td>
+                <td>@earning.TotalPayment.ToString("C")</td>
+                <td>@earning.AbsencePenaltyAmount.ToString("C")</td>
+                <td><strong>@earning.NetPayment.ToString("C")</strong></td>
+            </tr>
+        }
+    </tbody>
+</table>

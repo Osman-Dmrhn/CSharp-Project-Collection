@@ -1,0 +1,139 @@
+﻿@using Microsoft.AspNetCore.Http
+@using BlogApplication.Helpers
+@model BlogWithCategory
+
+@{
+   
+}
+@{
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bit And Byte</title>
+        <!-- Box-icon -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="nav container">
+                <a href="#" class="logo">Bit And <span>Byte</span></a>
+                <ul class="nav-menu">
+                    <li class="menu-item users-item"><a asp-action="UserView" asp-controller="User">Users</a></li>
+                    <li class="menu-item"><a asp-action="BlogView" asp-controller="Blog">Write</a></li>
+                    <li class="menu-item"><a asp-action="GetBlogById" asp-controller="Blog">View</a></li>
+
+                </ul>
+                <div class="nav-links">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="Login" asp-action="LogOut">Çıkış Yap</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Login" asp-action="LoginView" class="login">Login</a>
+                    }
+                    
+                </div>
+            </div>
+        </header>
+
+
+        <section class="home" id="home">
+            <div class="home-text container">
+                <h2 class="home-title">Emine Osman Rojin Blogger</h2>
+                <span class="home-subtitle">Your Gateway to Code</span>
+            </div>
+        </section>
+
+        <section class="about container" id="about">
+            <div class="contentBx">
+                <h2 class="titleText">Get in on the Hot Topics</h2>
+                <p class="title-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos consequuntur voluptate dolorum totam provident ducimus cupiditate dolore doloribus repellat. Saepe ad fugit similique
+                    quis quam. Odio suscipit incidunt distinctio.
+                    <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed blanditiis libero pariatur ipsum suscipit voluptates aut, 
+                    repellendus quos dolor autem, natus laboriosam consectetur maxime cumque, sunt magni optio? Veritatis, ea?
+                </p>
+                <a href="#" class="btn2">Read more</a>
+            </div>
+            <div class="imgBx">
+                <img src="images/about.png" alt="" class="fitBg">
+            </div>
+        </section>
+
+        <div class="post-filter container">
+            <span class="filter-item active-filter" data-filter="all">All</span>
+            @foreach (var category in Model.Kategoriler)  // Kategoriler listesini döngü ile gez
+            {
+                <span class="filter-item" data-filter="@category.KategoriAdi.ToLower()">@category.KategoriAdi</span>
+            }
+        </div>
+
+        <div class="post container">
+            @foreach (var post in Model.Blogs)
+            {
+                <div class="post-box" data-categories="@post.Kategoriler[0].KategoriAdi.ToLower()">
+                    <img src="@post.ResimPath" alt="@post.Baslik" class="post-img">
+                    <h2 class="category" data-categories="@post.Kategoriler[0].KategoriAdi.ToLower()">@post.Kategoriler[0].KategoriAdi.ToString()</h2>
+                    <a asp-action="BlogIndex" asp-controller="Blog" asp-route-id="@post.Id" class="post-title">@post.Baslik</a>
+                    <span class="post-date">@post.DuzenlenmeTarihi.ToString("dd MMM yyyy")</span>
+                    <p class="post-description">@post.Icerik</p>
+                    <div class="profile">
+                        <img src="@post.Yazar.proImage" alt="@post.Yazar.Username" class="profile-img">
+                        <span class="profile-name">@post.Yazar.Username</span>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="pagination">
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <a href="@Url.Action("Index", "Home", new { page = i })" class="page-link @((i == Model.CurrentPage) ? "active" : "")">@i</a>
+            }
+        </div>
+       
+       
+
+        <footer>
+            <div class="footer-container">
+                <div class="sec aboutus">
+                    @Html.UserNameDisplay()
+                    <p><date-format value="@DateTime.Now" format="MMMM dd, yyyy"></date-format></p>
+                    <ul class="sci">
+                        <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="sec quicklinks">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="users.html">Users</a></li>
+                        <li><a href="writes.html">Write</a></li>
+                        <li><a href="view.html">Wiew</a></li>
+                    </ul>
+                </div>
+                <div class="sec contactBx">
+                    <h2>Contact Info</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class='bx bxs-map'></i></span>
+                            <span>Isparta Uygulamalı Bilimler Üniversitesi <br> Teknoloji Fakültesi <br> Tr</span>
+                        </li>
+                        <li>
+                            <span><i class='bx bx-envelope'></i></span>
+                            <p><a href="mailto:ugurlu34emine@gmail.com">ugurlu34emine@gmail.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/js/script.js"></script>
+    </body>
+
+}
+

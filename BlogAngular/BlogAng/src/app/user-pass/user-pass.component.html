@@ -1,0 +1,47 @@
+<div>
+    <h2>Şifre Değiştir</h2>
+    <form (ngSubmit)="changePassword()">
+      <div>
+        <label for="oldPassword">Eski Şifre</label>
+        <input
+          id="oldPassword"
+          type="password"
+          [(ngModel)]="model.CurrentPassword"
+          name="oldPassword"
+          required
+        />
+      </div>
+      <div>
+        <label for="newPassword">Yeni Şifre</label>
+        <input
+          id="newPassword"
+          type="password"
+          [(ngModel)]="model.NewPassword"
+          name="newPassword"
+          required
+        />
+      </div>
+      <div>
+        <label for="confirmPassword">Yeni Şifre (Tekrar)</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          [(ngModel)]="model.ConfirmPassword"
+          name="confirmPassword"
+          required
+        />
+      </div>
+  
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  
+      <button type="submit" [disabled]="isLoading">Şifreyi Değiştir</button>
+  
+      <div *ngIf="isLoading" class="loading-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </form>
+  </div>
+  

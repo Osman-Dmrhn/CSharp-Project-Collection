@@ -1,0 +1,184 @@
+﻿ @model EmployeeWorkdayDetailsViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Çalışma Günleri Detayları";
+}
+@section styles {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" />
+    <style>
+        #details-form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 6px;
+            max-width: 400px;
+        }
+
+        .fc-event-title {
+            white-space: pre-line; /* \n karakterini satır olarak işler */
+        }
+    </style>
+}
+
+<h2>@Model.FullName - Çalışma Günleri Detayları</h2>
+
+<div id="calendar"></div>
+
+<!-- Seçilen güne ait detay formu -->
+<div id="details-form" style="display:none;">
+    <h4>Gün Detayları: <span id="selected-date"></span></h4>
+
+    @using (Html.BeginForm("WorkdayDetails", "Admin", FormMethod.Post, new { id = "workdayForm" }))
+    {
+        @Html.HiddenFor(m => m.EmployeeId)
+        @Html.HiddenFor(m => m.FullName)
+        @* Dinamik olarak formdaki tek WorkdayDetails elemanını güncelleyeceğiz *@
+        <input type="hidden" id="WorkdayId" name="WorkdayDetails[0].Id" />
+        <div class="form-group">
+            <label>Tarih</label>
+            <input type="text" id="WorkDate" name="WorkdayDetails[0].WorkDate" class="form-control" readonly />
+        </div>
+
+
+        <!-- ISABSENT -->
+        <div class="form-group form-check">
+            <input type="checkbox" id="IsAbsent" name="WorkdayDetails[0].IsAbsent" class="form-check-input" value="true" />
+            <label class="form-check-label" for="IsAbsent">Gelmedi</label>
+        </div>
+
+        <!-- ISEXC–> -->
+        <div class="form-group form-check">
+            <input type="checkbox" id="IsExcused" name="WorkdayDetails[0].IsExcused" class="form-check-input" value="true" />
+            <label class="form-check-label" for="IsExcused">Mazeretli</label>
+        </div>
+
+        <div class="form-group">
+            <label>Başlangıç</label>
+            <input type="time" id="StartTime" name="WorkdayDetails[0].StartTime" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Bitiş</label>
+            <input type="time" id="EndTime" name="WorkdayDetails[0].EndTime" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Not</label>
+            <input type="text" id="Note" name="WorkdayDetails[0].Note" class="form-control" />
+        </div>
+
+        <input type="number" step="0.01" min="0"
+               id="OvertimeHoursRaw"
+               name="WorkdayDetails[0].OvertimeHoursRaw"
+               class="form-control" />
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    }
+</div>
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/tr.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var workdays = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.WorkdayDetails.Select(wd => new
+            {
+                id = wd.Id,
+                title =
+            (wd.IsAbsent && wd.IsExcused) ? "Mazeretli" :
+            (wd.IsAbsent && !wd.IsExcused) ? "Gelmedi" :
+            (
+            wd.OvertimeHours.HasValue && wd.OvertimeHours.Value.TotalHours > 0
+            ? $"Çalıştı\nMesai: {wd.OvertimeHours.Value.TotalHours:F1} saat"
+            : "Çalıştı"
+            ),
+                start = wd.WorkDate.ToString("yyyy-MM-dd"),
+                color =
+            wd.IsAbsent && wd.IsExcused ? "orange" :
+            wd.IsAbsent && !wd.IsExcused ? "red" :
+            (wd.OvertimeHours.HasValue && wd.OvertimeHours.Value.TotalHours > 0 ? "#facc15" : "#3b82f6"), // Mesaili gün sarı
+                rawData = new
+                {
+                    wd.Id,
+                    wd.WorkDate,
+                    wd.IsAbsent,
+                    wd.IsExcused,
+                    wd.StartTime,
+                    wd.EndTime,
+                    wd.Note,
+                    OvertimeHours = wd.OvertimeHours?.TotalHours
+                }
+            })));
+
+           
+
+            // Tatil günleri için event oluştur
+            var holidayEvents = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Holidays.Select(date => new
+            {
+                id = "holiday-" + date.ToString("yyyyMMdd"),
+                title = "Resmi Tatil",
+                start = date.ToString("yyyy-MM-dd"),
+                color = "darkred",
+                allDay = true,
+                editable = false
+            })));
+            var allEvents = workdays.concat(holidayEvents);
+
+            // WorkdayDetails’ı tarih bazlı map’e çevir (hızlı erişim için)
+            var workdayMap = {};
+            workdays.forEach(function (wd) {
+                workdayMap[wd.start] = wd.rawData;
+            });
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 500,
+                events: allEvents,
+                locale: 'tr',
+
+                // Gün hücresine tıklanınca (dayCellClick)
+                dateClick: function (info) {
+                    var clickedDate = info.dateStr;
+
+                    // Formu göster
+                    document.getElementById('details-form').style.display = 'block';
+                    document.getElementById('selected-date').textContent = clickedDate;
+
+                    // Eğer o gün veri varsa getir, yoksa yeni boş form
+                    var wd = workdayMap[clickedDate];
+
+                    if (wd) {
+                        document.getElementById('WorkdayId').value = wd.Id || '';
+                        document.getElementById('WorkDate').value = wd.WorkDate;
+                        document.getElementById('IsAbsent').checked = wd.IsAbsent;
+                        document.getElementById('IsExcused').checked = wd.IsExcused;
+                        document.getElementById('StartTime').value = wd.StartTime || '';
+                        document.getElementById('EndTime').value = wd.EndTime || '';
+                        document.getElementById('Note').value = wd.Note || '';
+                        document.getElementById('OvertimeHoursRaw').value = wd.OvertimeHours != null ? wd.OvertimeHours : '';
+                    } else {
+                        document.getElementById('WorkdayId').value = '';
+                        document.getElementById('WorkDate').value = clickedDate;
+                        document.getElementById('IsAbsent').checked = false;
+                        document.getElementById('IsExcused').checked = false;
+                        document.getElementById('StartTime').value = '';
+                        document.getElementById('EndTime').value = '';
+                        document.getElementById('Note').value = '';
+                        document.getElementById('OvertimeHoursRaw').value = '';
+                    }
+
+                    // Form alanları her zaman aktif olsun
+                    document.getElementById('IsAbsent').disabled = false;
+                    document.getElementById('IsExcused').disabled = false;
+                    document.getElementById('StartTime').disabled = false;
+                    document.getElementById('EndTime').disabled = false;
+                    document.getElementById('Note').disabled = false;
+                }
+            });
+
+            calendar.render();
+        });
+        
+    </script>
+} 

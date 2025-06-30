@@ -1,0 +1,125 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\about.png",
+      "PackagePath": "staticwebassets\\images\\about.png"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\banner.png",
+      "PackagePath": "staticwebassets\\images\\banner.png"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\banner2.png",
+      "PackagePath": "staticwebassets\\images\\banner2.png"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img1.1.jpg",
+      "PackagePath": "staticwebassets\\images\\img1.1.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img1.jpg",
+      "PackagePath": "staticwebassets\\images\\img1.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img10.jpg",
+      "PackagePath": "staticwebassets\\images\\img10.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img2.jpg",
+      "PackagePath": "staticwebassets\\images\\img2.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img3.jpg",
+      "PackagePath": "staticwebassets\\images\\img3.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img4.jpg",
+      "PackagePath": "staticwebassets\\images\\img4.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img5.jpg",
+      "PackagePath": "staticwebassets\\images\\img5.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img6.jpg",
+      "PackagePath": "staticwebassets\\images\\img6.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img7.jpg",
+      "PackagePath": "staticwebassets\\images\\img7.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img8.jpg",
+      "PackagePath": "staticwebassets\\images\\img8.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\img9.jpg",
+      "PackagePath": "staticwebassets\\images\\img9.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\testi1.jpg",
+      "PackagePath": "staticwebassets\\images\\testi1.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\testi2.jpg",
+      "PackagePath": "staticwebassets\\images\\testi2.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\images\\testi3.jpg",
+      "PackagePath": "staticwebassets\\images\\testi3.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\43f70aec-acc9-48ef-af6d-15d2c1606f26.png",
+      "PackagePath": "staticwebassets\\uploads\\43f70aec-acc9-48ef-af6d-15d2c1606f26.png"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\4bc1c94f-a33c-4104-a95b-c5d6ee6a13cc",
+      "PackagePath": "staticwebassets\\uploads"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\777bfaaa-be3d-45d2-97b1-b8298b39b92d.png",
+      "PackagePath": "staticwebassets\\uploads\\777bfaaa-be3d-45d2-97b1-b8298b39b92d.png"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\880f6c70-3d60-44e9-a707-195d0951b461",
+      "PackagePath": "staticwebassets\\uploads"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\a0cde536-95e0-43ff-8e0f-f13c2f9ace56",
+      "PackagePath": "staticwebassets\\uploads"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\d4d6f866-d6fc-43bb-9d50-7d4d58ee7fac.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d4d6f866-d6fc-43bb-9d50-7d4d58ee7fac.jpg"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\eeaaf7ec-55ec-4c83-bdd5-bc5013703550",
+      "PackagePath": "staticwebassets\\uploads"
+    },
+    {
+      "Id": "E:\\BlogAngular\\BlogAngApi\\wwwroot\\uploads\\logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\logo.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlogAngApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BlogAngApi.props",
+      "PackagePath": "build\\BlogAngApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BlogAngApi.props",
+      "PackagePath": "buildMultiTargeting\\BlogAngApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BlogAngApi.props",
+      "PackagePath": "buildTransitive\\BlogAngApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

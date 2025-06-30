@@ -1,0 +1,85 @@
+﻿@model List<FactoryEntitlementProgram.Models.MonthlyEarnings>
+@using System.Globalization
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Yönetici Paneli";
+}
+
+@{
+    ViewData["Title"] = "Aylık Kazançlar";
+
+    int selectedYear = ViewBag.SelectedYear ?? DateTime.Now.Year;
+    int selectedMonth = ViewBag.SelectedMonth ?? DateTime.Now.Month;
+
+    string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(selectedMonth);
+    var monthsList = ViewBag.Months as List<SelectListItem>;
+}
+
+<h2 class="mb-4">Aylık Kazanç Hesaplama</h2>
+
+<form method="post" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label class="form-label">Yıl:</label>
+        <input type="number" name="year" class="form-control" value="@selectedYear" required />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Ay:</label>
+        <select name="month" class="form-control">
+            @foreach (var item in monthsList)
+            {
+                <option value="@item.Value" selected="@(item.Value == selectedMonth.ToString() ? "selected" : null)">
+                    @item.Text
+                </option>
+
+            }
+        </select>
+    </div>
+    <div class="col-md-3 align-self-end">
+        <button type="submit" class="btn btn-primary w-100">Kazançları Hesapla</button>
+    </div>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h4>@monthName @selectedYear - Personel Kazançları</h4>
+
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Ad Soyad</th>
+                <th>Departman</th>
+                <th>Normal Saat</th>
+                <th>Mesai Saat</th>
+                <th>Toplam Ücret</th>
+                <th>Ceza</th>
+                <th>Net Ücret</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var earning in Model)
+            {
+                <tr>
+                    <td>@earning.Employee.AppUser.FullName</td>
+                    <td>@earning.Employee.Department</td>
+                    <td>@earning.TotalNormalHours</td>
+                    <td>@earning.TotalOvertimeHours</td>
+                    <td>@earning.TotalPayment.ToString("C")</td>
+                    <td>@earning.AbsencePenaltyAmount.ToString("C")</td>
+                    <td><strong>@earning.NetPayment.ToString("C")</strong></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (Model != null && Model.Any())
+{
+    // Tabloyu göster
+}
+else
+{
+    if (Context.Request.Method == "POST")
+    {
+        <div class="alert alert-warning">Seçilen tarihler için veri bulunamadı.</div>
+    }
+}

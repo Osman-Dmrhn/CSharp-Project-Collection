@@ -1,0 +1,33 @@
+<div class="user-settings">
+    <h2>Kullanıcı Ayarları</h2>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  
+    <div *ngIf="user">
+      <form (ngSubmit)="saveUserChanges()">
+        <div class="form-group">
+          <label for="username">Kullanıcı Adı</label>
+          <input type="text" id="username" [(ngModel)]="editUser.username" name="username" class="form-control" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="email">E-posta</label>
+          <input type="email" id="email" [(ngModel)]="editUser.email" name="email" class="form-control" required />
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+      </form>
+  
+      <!-- Şifre Değiştirme Butonu -->
+      <div class="password-change-link mt-4">
+        <a [routerLink]="['/changepassword']" class="btn btn-link">Şifreni mi Unuttun? Şifreyi Değiştir</a>
+      </div>
+    </div>
+  </div>
+  

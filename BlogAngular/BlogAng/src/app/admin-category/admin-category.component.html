@@ -1,0 +1,41 @@
+<div class="admin-category-container">
+    <h2>Kategoriler</h2>
+  
+    <div class="message" *ngIf="message">{{ message }}</div>
+  
+    <!-- Kategori Listeleme -->
+    <div class="category-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Başlık</th>
+            <th>İşlemler</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories">
+            <td>{{ category.kategoriAdi }}</td>
+            <td>
+              <button (click)="selectCategory(category)">Düzenle</button>
+              <button (click)="deleteCategory(category.id)">Sil</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Yeni Kategori Ekle -->
+    <div class="add-category">
+      <input [(ngModel)]="newCategory" type="text" placeholder="Kategori Adı Giriniz." />
+      <button (click)="addCategory()">Ekle</button>
+    </div>
+  
+    <!-- Kategori Güncelleme -->
+    <div class="edit-category" *ngIf="selectedCategory">
+      <h3>Kategoriyi Düzenle</h3>
+      <input [(ngModel)]="selectedCategory.KategoriAdi" type="text"  [placeholder]="selectedCategory.kategoriAdi"/>
+      <button (click)="editCategory()">Güncelle</button>
+      <button (click)="selectedCategory = null">İptal</button>
+    </div>
+  </div>
+  

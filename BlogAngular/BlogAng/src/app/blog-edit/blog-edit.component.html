@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <h2>Blog Güncelle</h2>
+
+  <form [formGroup]="blogForm" (ngSubmit)="onUpdateBlog()">
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <div class="form-group">
+      <label for="baslik">Başlık</label>
+      <input
+        type="text"
+        id="baslik"
+        class="form-control"
+        formControlName="baslik"
+        [ngClass]="{ 'is-invalid': blogForm.get('baslik')?.invalid && blogForm.get('baslik')?.touched }"
+      />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="icerik">İçerik</label>
+      <textarea
+        id="icerik"
+        class="form-control"
+        formControlName="icerik"
+        [ngClass]="{ 'is-invalid': blogForm.get('icerik')?.invalid && blogForm.get('icerik')?.touched }"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary mt-3"
+      [disabled]="isLoading || blogForm.invalid"
+    >
+      {{ isLoading ? 'Yükleniyor...' : 'Güncelle' }}
+    </button>
+
+    <!-- Geri Dön Butonu -->
+    <button
+      type="button"
+      class="btn btn-secondary mt-3 ml-2"
+      [routerLink]="['/userBlog']" routerLinkActive="router-link-active" >
+      Geri Dön
+    </button>
+  </form>
+</div>

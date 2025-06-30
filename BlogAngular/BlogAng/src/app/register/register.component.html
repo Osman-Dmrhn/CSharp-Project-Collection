@@ -1,0 +1,53 @@
+<div class="register-container">
+  <h2>Kayıt Ol</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onRegister()" novalidate>
+    <div class="form-group">
+      <label for="username">Kullanıcı Adı</label>
+      <input type="text" 
+             id="username" 
+             [(ngModel)]="userData.username" 
+             name="username" 
+             required 
+             minlength="3"
+             class="form-control"
+             #usernameCtrl="ngModel">
+      <div *ngIf="usernameCtrl.invalid && usernameCtrl.touched" class="text-danger">
+          <small *ngIf="usernameCtrl.errors?.['required']">Kullanıcı adı gereklidir.</small>
+          <small *ngIf="usernameCtrl.errors?.['minlength']">En az 3 karakter olmalıdır.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" 
+             id="email" 
+             [(ngModel)]="userData.email" 
+             name="email" 
+             required 
+             email
+             class="form-control"
+             #emailCtrl="ngModel">
+      <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="text-danger">
+          <small *ngIf="emailCtrl.errors?.['required']">Email gereklidir.</small>
+          <small *ngIf="emailCtrl.errors?.['email']">Geçerli bir email giriniz.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Şifre</label>
+      <input type="password" 
+             id="password" 
+             [(ngModel)]="userData.password" 
+             name="password" 
+             required 
+             minlength="6"
+             class="form-control"
+             #passwordCtrl="ngModel">
+      <div *ngIf="passwordCtrl.invalid && passwordCtrl.touched" class="text-danger">
+          <small *ngIf="passwordCtrl.errors?.['required']">Şifre gereklidir.</small>
+          <small *ngIf="passwordCtrl.errors?.['minlength']">Şifre en az 6 karakter olmalıdır.</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3" [disabled]="registerForm.invalid">Kayıt Ol</button>
+    <p class="text-danger mt-2">{{ errorMessage }}</p>
+  </form>
+</div>

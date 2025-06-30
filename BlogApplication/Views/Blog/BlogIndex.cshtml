@@ -1,0 +1,136 @@
+﻿@model Blog
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/show.css">
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a asp-action="Index" asp-controller="Home" class="logo">Bit And Byte</a>
+            <ul class="nav-menu">
+                <li class="menu-item users-item"><a asp-action="UserView" asp-controller="User">Users</a></li>
+                <li class="menu-item"><a asp-action="BlogView" asp-controller="Blog">Write</a></li>
+                <li class="menu-item">><a asp-action="GetBlogById" asp-controller="Blog">View</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="blog-single gray-bg">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-8 m-15px-tb">
+                    <article class="article">
+                        <div class="article-img">
+                            <img src="~/uploads/@Model.ResimPath.Split('/').Last()" title="@Model.Baslik" alt="">
+                        </div>
+                        <div class="article-title">
+                            @Html.DisplayFor(model => model.Kategoriler[0].KategoriAdi)
+                            <h2>@Model.Baslik</h2>
+                            <div class="media">
+                                <div class="avatar">
+                                    <img src="~/uploads/@Model.Yazar.proImage.Split('/').Last()" title="@Model.Yazar.Username" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <label>@Model.Yazar.Username</label>
+                                    <span>@Model.DuzenlenmeTarihi</span>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <p>@Model.Icerik</p>
+                        </div>                       
+                    </article>
+                    <div class="contact-form article-comment">
+                        <h4>Yorum Yap</h4>
+                        <form id="contact-form" asp-action="Add_Comment" asp-controller="Comment" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="blogId" value="@Model.Id"/>
+                                    <div class="form-group">
+                                        <textarea name="content" id="message" placeholder="Yorumunuz" rows="4" class="form-control" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send">
+                                        <button class="px-btn theme" type="submit"><span>Gönder</span><i class="arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                        }
+
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-4 m-15px-tb blog-aside">
+                    <!-- Yorumlar -->
+                    <div class="widget widget-author">
+                        <div class="widget-title">
+                            <h3>Yorumlar</h3>
+                        </div>
+                        @if (Model.Yorumlar != null)
+                        {
+                            @foreach (var comment in Model.Yorumlar)
+                            {
+                                <div class="widget-body">
+                                    <div class="media align-items-center">
+                                        <div class="avatar">
+                                            <img src="~/uploads/@comment.User.proImage.Split('/').Last()" title="" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h6>@comment.User.Username</h6>
+                                        </div>
+                                    </div>
+                                    <p>@comment.Content</p>
+                                </div>
+                            } 
+                        }
+                        else{
+                            <p>İlk Yorumu Siz Yapın</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const style = document.createElement('style');
+            style.textContent = `
+              ::-webkit-scrollbar {
+                width: 12px;
+              }
+
+              ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+              }
+
+              ::-webkit-scrollbar-thumb {
+                background: rgb(250, 160, 75);
+                border-radius: 6px;
+              }
+
+              ::-webkit-scrollbar-thumb:hover {
+                background: rgba(250, 160, 75, 0.8);
+              }
+            `;
+            document.head.appendChild(style);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Genel container düzenlemesi */
+.admin-category-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Başlık stil */
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Mesaj kutusu */
+  .message {
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Kategori listeleme tablosu */
+  .category-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .category-list th,
+  .category-list td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .category-list th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .category-list td {
+    background-color: #fff;
+  }
+  
+  .category-list tr:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+  
+  .category-list tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Buton stili */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Kategori ekleme ve düzenleme formu */
+  .add-category, .edit-category {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-category input, .edit-category input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .add-category button, .edit-category button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-category button:hover, .edit-category button:hover {
+    background-color: #218838;
+  }
+  
+  .edit-category button:nth-child(2) {
+    background-color: #dc3545;
+  }
+  
+  .edit-category button:nth-child(2):hover {
+    background-color: #c82333;
+  }
+  
+  
