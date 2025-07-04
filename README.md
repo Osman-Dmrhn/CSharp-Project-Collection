@@ -41,7 +41,7 @@ Fabrika içi yetkilendirme ve kullanıcı erişim yönetimi için geliştirilmi�
 - **Teknolojiler:** C#, ASP.NET MVC, Entity Framework
 - **Özellikler:** Kullanıcı rolleri, yetki hiyerarşisi, oturum bazlı kontrol sistemi
 
-📁 [Proje Klasörü](./Factory Entitlement Program)
+📁 [Proje Klasörü](./Factory Entitlement Program/Factory Entitlement Program)
 
 ---
 
